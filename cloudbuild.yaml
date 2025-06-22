@@ -20,3 +20,6 @@ steps:
 
 images:
   - 'gcr.io/$PROJECT_ID/albion-sheets:$COMMIT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
