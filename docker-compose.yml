@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  albion-sheets-service:
+    build: .
+    image: albion-sheets:latest
+    container_name: albion-sheets-container
+    command: flask --app app run --debug --host=0.0.0 --port=8080
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - .:/app
+
+    environment:
+      - FLASK_ENV=development
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/.keys/gcp-key.json
+      - GCP_PROJECT_ID=albion-teste
+      - GCS_BUCKET_NAME=albion-data
+      - BIGQUERY_DATASET=albion_data
+      - PORT=8080
