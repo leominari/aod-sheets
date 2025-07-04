@@ -6,3 +6,4 @@ pyarrow
 db-dtypes
 google-cloud-storage
 google-cloud-bigquery
+nats-py
